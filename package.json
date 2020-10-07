@@ -1,0 +1,29 @@
+{
+  "name": "swvl-backend-challenge",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "author": "Omar Safwany <omar.safwany@gmail.com>",
+  "description": "swvl backend challenge",
+  "main": "index.js",
+  "scripts": {
+    "docker": "docker-compose build --no-cache && docker-compose run node",
+    "test": "./node_modules/.bin/mocha ./test/ --recursive --timeout=120000 --exit",
+    "coverage": "./node_modules/.bin/nyc ./node_modules/.bin/mocha ./test/ --recursive --timeout=120000 --exit",
+    "lint": "./node_modules/.bin/eslint ./src/ ./test/ ./index.js",
+    "depcheck": "./node_modules/.bin/npm-check"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^6.0.0",
+    "eslint-config-crowdanalyzer": "^1.4.1",
+    "mocha": "^6.1.4",
+    "npm-check": "^5.9.0",
+    "nyc": "^14.1.1"
+  },
+  "dependencies": {
+    "ajv": "^6.12.5",
+    "limiter": "^1.1.5",
+    "lodash": "^4.17.20"
+  }
+}
